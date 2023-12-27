@@ -9,20 +9,32 @@ np.array(x)
 np.array(y)
 np.array(z)
 
-plt.plot(x, z, label='United Kingdom', color="green")
-plt.plot(x, y, label='France', color="red")
+def line():
+    plt.plot(x, z, label='United Kingdom', color="green")
+    plt.plot(x, y, label='France', color="red")
+    plt.title('Children out of school, primary', fontsize=15)
+    plt.xlabel('Year', fontsize=12, color='red')
+    plt.ylabel('Indicator', fontsize=12, color='red')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
 
-country_input = input("Enter the country (United Kingdom('Kingdom') or France): ").capitalize()
+def bar():
+    country_input = input("Enter the country (United Kingdom('Kingdom') or France): ").capitalize()
 
-if country_input == 'Kingdom':
-    plt.bar(x, z, label=country_input, color="blue")
-elif country_input == 'France':
-    plt.bar(x, y, label=country_input, color="orange")
-else:
-    print("Invalid country input. Please choose either United Kingdom(Kingdom) or France.")
-plt.title('Children out of school, primary', fontsize=15)
-plt.xlabel('Year', fontsize=12, color='red')
-plt.ylabel('Indicator', fontsize=12, color='red')
-plt.legend()
-plt.grid(True)
-plt.show()
+    if country_input == 'Kingdom':
+        plt.bar(x, z, label=country_input, color="blue")
+    elif country_input == 'France':
+        plt.bar(x, y, label=country_input, color="orange")
+    else:
+        print("Invalid country input. Please choose either United Kingdom('Kingdom') or France.")
+
+    plt.title('Children out of school, primary', fontsize=15)
+    plt.xlabel('Year', fontsize=12, color='red')
+    plt.ylabel('Indicator', fontsize=12, color='red')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+line()
+bar()
